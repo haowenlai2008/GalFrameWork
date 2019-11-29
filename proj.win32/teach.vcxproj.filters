@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gal">
+      <UniqueIdentifier>{c5a4b246-85bb-4779-bf6e-c1c58d0f5651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gal\UI">
+      <UniqueIdentifier>{12ad840b-4053-485d-b557-6576b314a39a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gal\场景">
+      <UniqueIdentifier>{048aaebb-3fb2-48b5-984e-cbde30d13184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gal\单例">
+      <UniqueIdentifier>{f62b6d36-edda-4084-9cee-5544f3f8e750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gal\工具">
+      <UniqueIdentifier>{f9d0cd16-967b-4e12-b0ae-5658113463b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gal\管理器">
+      <UniqueIdentifier>{63563662-f7cc-4255-aee2-1358c7eb314b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gal\配置表">
+      <UniqueIdentifier>{52736e6e-18cf-4f4a-b95f-c64b74dbe8e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gal\数据">
+      <UniqueIdentifier>{bb60142e-3052-4e40-a7d7-06a721aecb57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>src\gal\场景</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DialogData.cpp">
+      <Filter>src\gal\数据</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SceneData.cpp">
+      <Filter>src\gal\数据</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DataManager.cpp">
+      <Filter>src\gal\管理器</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CharacterData.cpp">
+      <Filter>src\gal\数据</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ImageData.cpp">
+      <Filter>src\gal\数据</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartScene.cpp">
+      <Filter>src\gal\场景</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StringUtil.cpp">
+      <Filter>src\gal\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CsvUtil.cpp">
+      <Filter>src\gal\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CsvData.cpp">
+      <Filter>src\gal\数据</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CharacterConfig.cpp">
+      <Filter>src\gal\配置表</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DialogConfig.cpp">
+      <Filter>src\gal\配置表</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ImageConfig.cpp">
+      <Filter>src\gal\配置表</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SceneConfig.cpp">
+      <Filter>src\gal\配置表</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ConfigBase.cpp" />
+    <ClCompile Include="..\Classes\DialogBoxZero.cpp">
+      <Filter>src\gal\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UIUtil.cpp">
+      <Filter>src\gal\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Bottom.cpp">
+      <Filter>src\gal\UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>src\gal\场景</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartScene.h">
+      <Filter>src\gal\场景</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SceneData.h">
+      <Filter>src\gal\数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DialogData.h">
+      <Filter>src\gal\数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataManager.h">
+      <Filter>src\gal\管理器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ImageData.h">
+      <Filter>src\gal\数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CharacterData.h">
+      <Filter>src\gal\数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Singleton.h">
+      <Filter>src\gal\单例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CsvUtil.h">
+      <Filter>src\gal\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StringUtil.h">
+      <Filter>src\gal\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CsvData.h">
+      <Filter>src\gal\数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CharacterConfig.h">
+      <Filter>src\gal\配置表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DialogConfig.h">
+      <Filter>src\gal\配置表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ImageConfig.h">
+      <Filter>src\gal\配置表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SceneConfig.h">
+      <Filter>src\gal\配置表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ConfigBase.h">
+      <Filter>src\gal\配置表</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DialogBoxZero.h">
+      <Filter>src\gal\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UIUtil.h">
+      <Filter>src\gal\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Bottom.h">
+      <Filter>src\gal\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
