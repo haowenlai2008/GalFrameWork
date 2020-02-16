@@ -152,6 +152,7 @@ void GameScene::onKeyDown(EventKeyboard::KeyCode keyCode, Event* event)
 
 void GameScene::generateButton(std::vector<int>& childScenes)
 {
+	bottomList->removeAllChildren();
 	auto sceneConfig = SceneConfig::getInstance();
 	auto imageConfig = ImageConfig::getInstance();
 	auto dialogConfig = DialogConfig::getInstance();

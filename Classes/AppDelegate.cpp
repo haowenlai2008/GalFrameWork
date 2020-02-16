@@ -120,6 +120,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     auto scene = StartScene::createScene();
 	
+	//addChild(scene, sprite);
     // run
     director->runWithScene(scene);
 

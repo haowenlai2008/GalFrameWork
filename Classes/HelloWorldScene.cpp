@@ -49,92 +49,59 @@ bool HelloWorld::init()
     {
         return false;
     }
-
-    auto visibleSize = Director::getInstance()->getVisibleSize();
+	//获得屏幕尺寸
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+	//获得原点坐标
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
 
-    // add a "close" icon to exit the progress. it's an autorelease object
+
+    //创建按钮
     auto closeItem = MenuItemImage::create(
                                            "CloseNormal.png",
                                            "CloseSelected.png",
                                            CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
 
-    if (closeItem == nullptr ||
-        closeItem->getContentSize().width <= 0 ||
-        closeItem->getContentSize().height <= 0)
-    {
-        problemLoading("'CloseNormal.png' and 'CloseSelected.png'");
-    }
-    else
-    {
-        float x = origin.x + visibleSize.width - closeItem->getContentSize().width/2;
-        float y = origin.y + closeItem->getContentSize().height/2;
-        closeItem->setPosition(Vec2(x,y));
-    }
 
-    // create menu, it's an autorelease object
+    float x = origin.x + visibleSize.width - closeItem->getContentSize().width/2;
+    float y = origin.y + closeItem->getContentSize().height/2;
+    closeItem->setPosition(Vec2(x,y));
+
+    //创建菜单
     auto menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
-
+	//创建文本
     auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-    if (label == nullptr)
-    {
-        problemLoading("'fonts/Marker Felt.ttf'");
-    }
-    else
-    {
-        // position the label on the center of the screen
-        label->setPosition(Vec2(origin.x + visibleSize.width/2,
-                                origin.y + visibleSize.height - label->getContentSize().height));
+	label->setPosition(Vec2(origin.x + visibleSize.width / 2,
+		origin.y + visibleSize.height - label->getContentSize().height));
+    this->addChild(label, 1);
 
-        // add the label as a child to this layer
-        this->addChild(label, 1);
-    }
-
-    // add "HelloWorld" splash screen"
+	//创建精灵
     auto sprite = Sprite::create("HelloWorld.png");
-    if (sprite == nullptr)
-    {
-        problemLoading("'HelloWorld.png'");
-    }
-    else
-    {
-        // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-		log("visibleSize.width=%f, visibleSize.height=%f, origin.x=%f, origin.y=%f", 
-			visibleSize.width, 
-			visibleSize.height,
-			origin.x,
-			origin.y);
-        // add the sprite as a child to this layer
-        this->addChild(sprite, 0);
-    }
+    sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    this->addChild(sprite, 0);
+
+	//创建精灵
+	shinobu = Sprite::create("shinobu.jpg");
+	shinobu->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+	this->addChild(shinobu);
 
 	auto* dispatcher = Director::getInstance()->getEventDispatcher();
-	auto* keyListener = EventListenerKeyboard::create();//创建键盘按键监听器
-
-	keyListener->onKeyPressed = CC_CALLBACK_2(HelloWorld::Press, this);//设置按键按下的响应
-	keyListener->onKeyReleased = CC_CALLBACK_2(HelloWorld::Release, this);//设置按键释放的响应
-	//键盘按键被弹回时响应
+	auto* keyListener = EventListenerKeyboard::create();//创建键盘按键监听器 
+	keyListener->onKeyPressed = CC_CALLBACK_2(HelloWorld::Press, this);//设置按键按下的响应 
+	keyListener->onKeyReleased = CC_CALLBACK_2(HelloWorld::Release, this);//设置按键释放的响应 
 	dispatcher->addEventListenerWithSceneGraphPriority(keyListener, this);
-	do
-	{
-		auto listener = EventListenerMouse::create();
-		listener->onMouseDown = CC_CALLBACK_1(HelloWorld::MouseDown, this);
-		listener->onMouseUp = CC_CALLBACK_1(HelloWorld::MouseUp, this);
-		_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-	} while (false);
+
+	auto listener = EventListenerMouse::create();
+	listener->onMouseDown = CC_CALLBACK_1(HelloWorld::MouseDown, this);
+	listener->onMouseUp = CC_CALLBACK_1(HelloWorld::MouseUp, this);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+
     return true;
 }
 
@@ -157,20 +124,25 @@ void HelloWorld::Press(EventKeyboard::KeyCode keycode, Event* event)
 	using KC = EventKeyboard::KeyCode;
 	switch (keycode)
 	{
-	case KC::KEY_UP_ARROW:
+	case KC::KEY_UP_ARROW://上按键
 		log("up press");
+		shinobu->runAction(MoveBy::create(0.5f, Vec2(0.0f, 10.0f)));
 		break;
-	case KC::KEY_DOWN_ARROW:
+	case KC::KEY_DOWN_ARROW://下按键
 		log("down press");
+		shinobu->runAction(MoveBy::create(0.5f, Vec2(0.0f, -10.0f)));
 		break;
-	case KC::KEY_RIGHT_ARROW:
+	case KC::KEY_RIGHT_ARROW://右按键
 		log("right press");
+		shinobu->runAction(MoveBy::create(0.5f, Vec2(10.0f, 0.0f)));
 		break;
-	case KC::KEY_LEFT_ARROW:
+	case KC::KEY_LEFT_ARROW://左按键
 		log("left press");
+		shinobu->runAction(MoveBy::create(0.5f, Vec2(-10.0f, 0.0f)));
 		break;
 	case KC::KEY_Z:
 		log("Explosion!");
+		shinobu->runAction(JumpBy::create(0.5f, Vec2(0.0f, 10.0f), 20.0f, 1));
 		break;
 	default:
 		break;

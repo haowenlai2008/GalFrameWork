@@ -26,18 +26,18 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-//USING_NS_CC;
+USING_NS_CC;
 class HelloWorld : public cocos2d::Scene
 {
 public:
     static cocos2d::Scene* createScene();
 
     virtual bool init();
-    
+	Sprite* shinobu;
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
-	void Press(cocos2d::EventKeyboard::KeyCode keycode, cocos2d::Event* event);//按下
-	void Release(cocos2d::EventKeyboard::KeyCode keycode, cocos2d::Event* event);//释放
+	void Press(EventKeyboard::KeyCode keycode, Event* event);//按下
+	void Release(EventKeyboard::KeyCode keycode, Event* event);//释放
 
 	void MouseDown(cocos2d::Event* event);
 	void MouseUp(cocos2d::Event* event);
